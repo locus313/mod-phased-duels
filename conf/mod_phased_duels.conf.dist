@@ -7,3 +7,7 @@
 # Enable the module? (1: true | 0: false)
 
 PhasedDuels.Enable = 1
+
+# Enable players to get Max HP after duel (1: true | 0: false)
+
+SetMaxHP.Enable = 1
