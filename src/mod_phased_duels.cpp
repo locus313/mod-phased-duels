@@ -30,7 +30,6 @@ public:
     {
         if (sConfigMgr->GetBoolDefault("PhasedDuels.Enable", true))
         {
-
             Map* map = firstplayer->GetMap();
             if (map->IsDungeon())
                 return;
@@ -92,6 +91,12 @@ public:
             {
                 firstplayer->SetHealth(firstplayer->GetMaxHealth());
                 secondplayer->SetHealth(secondplayer->GetMaxHealth());
+            }
+
+            if (sConfigMgr->GetBoolDefault("ResetCoolDowns.Enable", true))
+            {
+                firstplayer->RemoveAllSpellCooldown();
+                secondplayer->RemoveAllSpellCooldown();
             }
         }
     }
