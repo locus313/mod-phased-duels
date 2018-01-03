@@ -11,3 +11,7 @@ PhasedDuels.Enable = 1
 # Enable players to get Max HP after duel (1: true | 0: false)
 
 SetMaxHP.Enable = 1
+
+# Reset cooldowns on players finish duels (1: true | 0: false)
+
+ResetCoolDowns.Enable = 1
