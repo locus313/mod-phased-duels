@@ -8,10 +8,24 @@
 
 PhasedDuels.Enable = 1
 
-# Enable players to get Max HP after duel (1: true | 0: false)
+###################################################################################################
+#
+# SetMaxHP.Enable 
+#	Enable players to get Max HP after duel (1: true | 0: false)
+#
+# ResetCoolDowns.Enable
+#	Reset all cooldowns after duel has finished (1: true | 0: false)
+#
+# RestorePower.Enable
+#	Set players mana to full after duel has been completed (1: true | 0: false)
+#
+# RetorePowerForRogueOrWarrior.Enable
+#	Set Rogues and warrior to max after duel has completed this requires RestorePower to be enabled. (1: true | 0: false)
+#
+###################################################################################################
 
 SetMaxHP.Enable = 1
-
-# Reset cooldowns on players finish duels (1: true | 0: false)
-
 ResetCoolDowns.Enable = 1
+RestorePower.Enable = 1
+RetorePowerForRogueOrWarrior.Enable = 1
+
