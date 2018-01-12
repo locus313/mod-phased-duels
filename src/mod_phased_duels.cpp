@@ -20,7 +20,10 @@ public:
 
     void OnLogin(Player* pPlayer)
     {
-        ChatHandler(pPlayer->GetSession()).SendSysMessage("This server is running the |cff4CFF00PhasedDuels |rmodule.");
+        if (sConfigMgr->GetBoolDefault("PhasedDuels.Enable", true))
+        {
+            ChatHandler(pPlayer->GetSession()).SendSysMessage("This server is running the |cff4CFF00PhasedDuels |rmodule.");
+        }
     }
 
     void OnDuelStart(Player* firstplayer, Player* secondplayer) override
@@ -94,6 +97,21 @@ public:
             {
                 firstplayer->RemoveAllSpellCooldown();
                 secondplayer->RemoveAllSpellCooldown();
+            }
+
+            if (sConfigMgr->GetBoolDefault("RestorePower.Enable", true))
+            {
+                if (!sConfigMgr->GetBoolDefault("RetorePowerForRogueOrWarrior.Enable", true))
+                {
+                    if (firstplayer->getClass() == CLASS_ROGUE || firstplayer->getClass() == CLASS_WARRIOR)
+                        return;
+
+                    if (secondplayer->getClass() == CLASS_ROGUE || secondplayer->getClass() == CLASS_WARRIOR)
+                        return;
+                }
+
+                firstplayer->SetPower(firstplayer->getPowerType(), firstplayer->GetMaxPower(firstplayer->getPowerType()));
+                secondplayer->SetPower(secondplayer->getPowerType(), secondplayer->GetMaxPower(secondplayer->getPowerType()));
             }
         }
     }
