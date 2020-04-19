@@ -55,7 +55,7 @@ public:
                     if (!(*it)->IsGameMaster())
                         usedPhases |= (*it)->GetPhaseMask();
             // loop all unique phases
-            for (uint32 phase = 2; phase <= ULONG_MAX / 2; phase *= 2)
+            for (uint32 phase = 2; phase <= UINT_MAX / 2; phase *= 2)
             {
                 // If phase in use, skip
                 if (usedPhases & phase)
@@ -79,7 +79,7 @@ public:
     }
 
     // Restore phases
-    void OnDuelEnd(Player* firstplayer, Player* secondplayer, DuelCompleteType type) override
+    void OnDuelEnd(Player* firstplayer, Player* secondplayer, DuelCompleteType /* type */) override // unusued param type
     {
         if (sConfigMgr->GetBoolDefault("PhasedDueling.Enable", true))
         {
@@ -139,7 +139,7 @@ public:
                 pet1->SetHealth(pet1->GetMaxHealth());
                 pet2->SetHealth(pet2->GetMaxHealth());
 
-                
+
             }
         }
     }
