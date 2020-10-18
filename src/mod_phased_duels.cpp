@@ -17,7 +17,7 @@ http://emudevs.com/showthread.php/2282-phase-out-dueling-error?p=15483&viewfull=
 #include "Player.h"
 #include "Chat.h"
 #include "GridNotifiers.h"
-#include "Unit.h"
+#include "SpellAuras.h"
 
 class PhasedDueling : public PlayerScript
 {
