@@ -15,6 +15,7 @@ http://emudevs.com/showthread.php/2282-phase-out-dueling-error?p=15483&viewfull=
 #include "Pet.h"
 #include "ScriptMgr.h"
 #include "Player.h"
+#include "Chat.h"
 
 class PhasedDueling : public PlayerScript
 {
