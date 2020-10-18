@@ -20,7 +20,6 @@ http://emudevs.com/showthread.php/2282-phase-out-dueling-error?p=15483&viewfull=
 #include "Spell.h"
 #include "SpellAuraEffects.h"
 #include "SpellAuras.h"
-#include "SpellHistory.h"
 #include "SpellMgr.h"
 #include "SpellAuraEffects.h"
 
